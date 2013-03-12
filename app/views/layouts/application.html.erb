@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DeviceDemoApplication</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <!-- <script type='text/javascript' src="http://www.turnjs.com/lib/turn.min.js"></script> -->
+  <%= csrf_meta_tags %>
+</head>
+ <body class="<%= controller_name %> <%= action_name %>">
+    <header class="navbar navbar-fixed-top">
+      <nav class="navbar-inner">
+        <div class="container">
+            <%= link_to "Magazine App", root_path, :class => 'brand' %>
+        <ul class="nav">
+            <li><%= link_to 'Login', "#" %></li>
+            <li><%= link_to 'Sign up', "#" %></li>
+        </ul>
+        </div>
+      </nav>
+    </header>
+    <div id="main" role="main">
+      <div class="container">
+        <div class="content">
+            <div class="row">
+              <div class="span12">
+                <%= render "layouts/flash_notice" %>
+                <%= yield %>
+              </div>
+            </div>
+         </div>
+      </div> <!--! end of .container -->
+    </div> <!--! end of #main -->
+  </body>
+</html>

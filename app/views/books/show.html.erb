@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @book.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @book.title %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @book.author %>
+</p>
+
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %> |
+<%= link_to "Create Page", new_book_page_path(@book) %>
+
+<div id="flipbook">
+    <div class="hard"> 
+      <center><h3><%= @book.title %></h3> </center> </br>
+      <center>
+      <span>
+        Author : <%= @book.author %> </br>
+      </span>
+      <center>
+    </div> 
+    <div class="hard"></div>
+    <% @book.pages.each do |page| %>
+      <div style="padding:1px;">
+        <span style="padding:5px;"><%= page.content %> </span>
+      </div>
+    <% end %>
+    <div class="hard"></div>
+    <div class="hard"></div>
+</div>
+
+
+<script>
+$("#flipbook").turn({
+    width: 600,
+    height: 400,
+});
+
+</script>
+
